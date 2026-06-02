@@ -110,9 +110,9 @@ blink = [
 hot_face = [
     X, X, X, X, X, X, X, X,
     X, X, O, O, O, O, O, X,
-    X, O, X, R, R, X, X, O,
-    X, O, C, X, R, X, C, O,
-    X, O, C, X, X, X, C, O,
+    X, O, X, R, R, R, X, O,
+    X, O, C, X, R, R, C, O,
+    X, O, C, X, X, R, C, O,
     X, O, X, X, X, X, X, O,
     X, O, C, X, X, X, C, O,
     X, X, O, C, C, C, O, X,
