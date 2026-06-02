@@ -11,6 +11,8 @@ use_emu_sense = True # this uses the emulator sense app for the pi
 use_Low_Power_Mode = False # this dims the light to use less power
 round_up_temp = True # rounds up the temp value to the nearest number (no deicamls)
 show_Hints = False # I will tell you what I want though the debug logs
+use_custom_buddy = False # This makes it where you can use a custom buddy. a 8x8 image for each emotion with a charater of your choice!
+custom_buddy_path = "./image" # the folder where all the image data is stored
 
 # -------------------------------------------------------------------
 
@@ -66,6 +68,9 @@ def temp_Check(temputer):
         if show_Hints:
             print("I am too cold! Warm me up!")
 
+def wakey_wakey(open_eyes, closed_eyes):
+    
+
 # variables!
 
 hunger = 100 # how hungery they get
@@ -99,7 +104,7 @@ happy_face = [
     X, X, O, C, C, C, O, X,
 ]
 
-blink = [
+blink = [ # this is also used for dead face since it's eyes is closed
     X, X, X, X, X, X, X, X,
     X, X, O, O, O, O, O, X,
     X, O, X, X, X, X, X, O,
@@ -147,5 +152,5 @@ hungery_face = [
 # logic
 
 while True:
-    sense.set_pixels(hungery_face)
-    sleep(1)
+    print("Hello World!")
+
