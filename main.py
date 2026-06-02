@@ -26,6 +26,7 @@ sense = SenseHat()
 # the preload
 sense.clear()
 
+# does low power = true???
 if use_Low_Power_Mode:
     sense.low_light = True
 else:
