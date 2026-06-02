@@ -9,7 +9,7 @@ import atexit
 
 use_emu_sense = False # this uses the emulator sense app for the pi
 use_Celelis = False # For people who live outside the US
-use_Low_Power_Mode = False # this dims the light to use less power
+use_Low_Power_Mode = True # this dims the light to use less power
 round_up_temp = True # rounds up the temp value to the nearest number (no deicamls)
 
 # -------------------------------------------------------------------
@@ -82,8 +82,8 @@ happy_face = [
     X, O, C, X, X, X, C, O,
     X, O, C, X, X, X, C, O,
     X, O, X, X, X, X, X, O,
-    X, O, C, X, X, C, O, O,
-    X, X, O, C, C, O, X, X,
+    X, O, C, X, X, X, C, O,
+    X, X, O, C, C, C, O, X,
 ]
 
 while True:
