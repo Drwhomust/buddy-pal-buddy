@@ -1,5 +1,4 @@
 from sense_hat import SenseHat
-from sense_emu import SenseEmu
 from time import sleep
 
 # -------------------------------------------------------------------
@@ -12,10 +11,10 @@ use_Low_Power_Mode = False # this dims the light to use less power
 
 # -------------------------------------------------------------------
 
-sense = SenseHat()
-
 if use_emu_sense == True:
-    sense = SenseEmu
+    from sense_emu import SenseHat
+
+sense = SenseHat()
 
 # the preload
 sense.clear()
@@ -44,7 +43,7 @@ emotion = "Happy"
 
 hunger = 100 # how hungery they get
 
-temp = CelelisToFahrenheit(sense.get_temperature) # get's init temp
+temp = CelelisToFahrenheit(sense.get_temperature()) # get's init temp
 
 if temp >= 95:
     emotion = "Hot"
@@ -63,14 +62,14 @@ C = [42,88,252] # the eyes and mouth
 # Faces!
 
 happy_face = [
-    X, X, X, X, X, X, X,
-    X, X, O, O, O, X, X,
-    X, O, C, X, C, O, X,
-    X, O, C, X, C, O, X,
-    X, O, X, X, X, O, X,
-    X, O, C, X, C, O, X,
-    X, O, C, C, C, O, X,
-    X, X, O, O, O, X, X,
+    X, X, X, X, X, X, X, X,
+    X, X, O, O, O, O, O, X,
+    X, O, X, X, X, X, X, O,
+    X, O, C, X, X, X, C, O,
+    X, O, C, X, X, X, C, O,
+    X, O, X, X, X, X, X, O,
+    X, O, C, X, X, C, O, O,
+    X, X, O, C, C, O, X, X,
 ]
 
 sense.set_pixels(happy_face)
