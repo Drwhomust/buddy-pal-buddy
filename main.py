@@ -107,6 +107,17 @@ blink = [
     X, X, O, C, C, C, O, X,
 ]
 
+hot_face = [
+    X, X, X, X, X, X, X, X,
+    X, X, O, O, O, O, O, X,
+    X, O, X, R, R, X, X, O,
+    X, O, C, X, R, X, C, O,
+    X, O, C, X, X, X, C, O,
+    X, O, X, X, X, X, X, O,
+    X, O, C, X, X, X, C, O,
+    X, X, O, C, C, C, O, X,
+]
+
 while True:
-    sense.set_pixels(happy_face)
+    sense.set_pixels(hot_face)
     sleep(1)
