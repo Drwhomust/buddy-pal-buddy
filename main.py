@@ -118,6 +118,17 @@ hot_face = [
     X, X, O, C, C, C, O, X,
 ]
 
+cold_face = [
+    X, X, X, X, X, X, X, X,
+    X, X, O, O, O, O, O, X,
+    X, O, X, B, B, B, X, O,
+    X, O, C, X, B, B, C, O,
+    X, O, C, X, X, B, C, O,
+    X, O, X, X, X, X, X, O,
+    X, O, C, X, X, X, C, O,
+    X, X, O, C, C, C, O, X,
+]
+
 while True:
-    sense.set_pixels(hot_face)
+    sense.set_pixels(cold_face)
     sleep(1)
