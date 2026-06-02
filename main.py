@@ -86,6 +86,9 @@ happy_face = [
     X, X, O, C, C, C, O, X,
 ]
 
+print(use_Low_Power_Mode)
+print(emotion)
+
 while True:
     sense.set_pixels(happy_face)
     sleep(1)
