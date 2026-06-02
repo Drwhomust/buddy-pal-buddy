@@ -49,9 +49,10 @@ def CelelisToFahrenheit(input):
         output = math.ceil(output)
     return output
 
-def exit_Clean_Up():
-    sense.show_message("Goodbye! :)")
-    sense.clear()
+def exit_Clean_Up(): # the clean up function
+    sense.clear # clears everything
+    sense.show_message("Goodbye! :)") # says final goodbye
+    sense.clear() # clears for the next program
 
 def temp_Check(temputer):
     if temputer >= 95:
