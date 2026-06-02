@@ -10,7 +10,7 @@ import atexit
 use_emu_sense = True # this uses the emulator sense app for the pi
 use_Low_Power_Mode = False # this dims the light to use less power
 round_up_temp = True # rounds up the temp value to the nearest number (no deicamls)
-show_Hints = True # I will tell you what I want though the debug logs
+show_Hints = False # I will tell you what I want though the debug logs
 
 # -------------------------------------------------------------------
 
