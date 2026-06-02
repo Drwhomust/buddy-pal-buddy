@@ -86,4 +86,6 @@ happy_face = [
     X, X, O, C, C, O, X, X,
 ]
 
-sense.set_pixels(happy_face)
+while True:
+    sense.set_pixels(happy_face)
+    sleep(1)
