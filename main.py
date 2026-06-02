@@ -137,10 +137,13 @@ hungery_face = [
     X, O, C, X, X, X, C, O,
     X, O, C, X, X, X, C, O,
     X, O, X, X, X, X, X, O,
-    X, O, C, X, X, X, C, O,
-    X, X, O, C, C, C, O, X,
+    X, O, C, C, C, C, C, O,
+    X, X, O, O, O, O, O, X,
 ]
 
+
+# logic
+
 while True:
-    sense.set_pixels(happy_face)
+    sense.set_pixels(hungery_face)
     sleep(1)
