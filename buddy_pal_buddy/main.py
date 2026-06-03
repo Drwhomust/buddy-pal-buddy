@@ -11,7 +11,7 @@ import random
 use_emu_sense = False # this uses the emulator sense app for the pi
 use_Low_Power_Mode = False # this dims the light to use less power
 round_up_temp = True # rounds up the temp value to the nearest number (no deicamls)
-show_Hints = True # I will tell you what I want though the debug logs. Also good for debugging lolz
+show_Hints = False # I will tell you what I want though the debug logs. Also good for debugging lolz
 use_custom_buddy = False # This makes it where you can use a custom buddy. a 8x8 image for each emotion with a charater of your choice!
 custom_buddy_path = "./image/" # the folder where all the image data is stored
 # by defult the custom image path is the image folder of the github repo.
