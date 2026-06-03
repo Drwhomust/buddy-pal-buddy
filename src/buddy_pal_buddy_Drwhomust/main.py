@@ -226,9 +226,13 @@ while True:
             set_pixel_via_image("Blink")
             sleep(0.9)
             set_pixel_via_image(emotion)
+        else:
+            sense.set_pixels(blink)
+            sleep(0.9)
+            sense.set_pixels(happy_face)
 
     # handles making buddy go hungery
-    if random_numberz > 5:
+    if random_numberz > 50:
         hungery = hungery - 5
         if show_Hints:
             print("Just lost some hunger. Now at...")
