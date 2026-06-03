@@ -23,7 +23,7 @@ dependencies = [
 
 readme = "README.md"
 
-license = "CC0 1.0 Universal"
+license = "CC0-1.0"
 license-files = ["LICENSE"]
 
 keywords = ["tamagotchi", "raspberry pi", "pi", "sense hat"]
@@ -35,12 +35,10 @@ classifiers = [
   #   4 - Beta
   #   5 - Production/Stable
   "Development Status :: 5 - Production/Stable",
-
-  # Indicate who your project is intended for
   "Intended Audience :: Other Audience",
   "Intended Audience :: Developers",
   "Intended Audience :: Education",
-  "Topic :: Games/Entertainment :: Simulation"
+  "Topic :: Games/Entertainment :: Simulation",
 
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.6",
@@ -54,7 +52,7 @@ Repository = "https://github.com/Drwhomust/buddy-pal-buddy"
 Issues = "https://github.com/Drwhomust/buddy-pal-buddy/issues"
 
 [project.scripts]
-buddy-cli = "buddy:main"
+buddy-cli = "buddy_pal_buddy:main"
 
 [project.optional-dependencies]
 emu = ["sense-emu"]
