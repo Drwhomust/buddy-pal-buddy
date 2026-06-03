@@ -12,7 +12,10 @@ use_Low_Power_Mode = False # this dims the light to use less power
 round_up_temp = True # rounds up the temp value to the nearest number (no deicamls)
 show_Hints = False # I will tell you what I want though the debug logs
 use_custom_buddy = False # This makes it where you can use a custom buddy. a 8x8 image for each emotion with a charater of your choice!
-custom_buddy_path = "./image" # the folder where all the image data is stored
+custom_buddy_path = "./image/" # the folder where all the image data is stored
+# by defult the custom image path is the image folder of the github repo.
+# feel free to change it to your path or use the images in that folder
+# as a reference when making your own custom charater
 
 # -------------------------------------------------------------------
 
@@ -69,11 +72,46 @@ def temp_Check(temputer):
             print("I am too cold! Warm me up!")
 
 def wakey_wakey(open_eyes, closed_eyes):
+    if use_custom_buddy:
+        sense.load_image(custom_buddy_path.join("blink.png"))
+    else:
+        sense.set_pixels(closed_eyes)
     
+    sleep(2.5) # waiting for the buddy to wake up
+
+    if use_custom_buddy:
+        sense.load_image(custom_buddy_path.join("happy.png"))
+    else:
+        sense.set_pixels(open_eyes)
+
+def set_pixel_via_image(emo):
+    # checks if you can use custom buddies
+    if use_custom_buddy:
+        # what emotion
+        if emo == "Happy":
+            sense.load_image(custom_buddy_path.join("happy.png"))
+        else:
+            if emo == "Hungry":
+                sense.load_image(custom_buddy_path.join("hungery_face.png"))
+            else:
+                if emo == "Cold":
+                    sense.load_image(custom_buddy_path.join("cold.png"))
+                else:
+                    if emo == "Hot":
+                        sense.load_image(custom_buddy_path.join("hot.png"))
+                    else:
+                        if emo == "blink":
+                            sense.load_image(custom_buddy_path.join("blink.png"))
+
+def force_face_load(face):
+    sense.set_pixels(face)
+                
 
 # variables!
 
-hunger = 100 # how hungery they get
+hungery = 100 # how hungery they get
+
+lives = 3 # how many lives before buddy dies
 
 temp = CelelisToFahrenheit(sense.get_temperature()) # get's init temp
 
