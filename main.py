@@ -2,20 +2,24 @@ from sense_hat import SenseHat
 from time import sleep
 import math
 import atexit
+import random
 
 # -------------------------------------------------------------------
 # FLAGS!!
 # Feel free to change this however you want! >~<
 
-use_emu_sense = True # this uses the emulator sense app for the pi
+use_emu_sense = False # this uses the emulator sense app for the pi
 use_Low_Power_Mode = False # this dims the light to use less power
 round_up_temp = True # rounds up the temp value to the nearest number (no deicamls)
-show_Hints = False # I will tell you what I want though the debug logs
+show_Hints = True # I will tell you what I want though the debug logs
 use_custom_buddy = False # This makes it where you can use a custom buddy. a 8x8 image for each emotion with a charater of your choice!
 custom_buddy_path = "./image/" # the folder where all the image data is stored
 # by defult the custom image path is the image folder of the github repo.
 # feel free to change it to your path or use the images in that folder
 # as a reference when making your own custom charater
+
+# also the charater in there as a refernce is my OC timbo
+# a nightcrawler from the roblox game kaiju paradise
 
 # -------------------------------------------------------------------
 
@@ -56,31 +60,20 @@ def CelelisToFahrenheit(input):
     return output
 
 def exit_Clean_Up(): # the clean up function
-    sense.clear # clears everything
+    sense.clear() # clears everything
     sense.show_message("Goodbye! :)") # says final goodbye
     sense.clear() # clears for the next program
 
-def temp_Check(temputer):
-    if temputer >= 95:
-        emotion = "Hot"
-        if show_Hints:
-            print("I am way too hot! Cool me down!")
-
-    if temputer <= 68:
-        emotion = "Cold"
-        if show_Hints:
-            print("I am too cold! Warm me up!")
-
 def wakey_wakey(open_eyes, closed_eyes):
     if use_custom_buddy:
-        sense.load_image(custom_buddy_path.join("blink.png"))
+        sense.load_image(custom_buddy_path + "blink.png")
     else:
         sense.set_pixels(closed_eyes)
     
     sleep(2.5) # waiting for the buddy to wake up
 
     if use_custom_buddy:
-        sense.load_image(custom_buddy_path.join("happy.png"))
+        sense.load_image(custom_buddy_path + "happy.png")
     else:
         sense.set_pixels(open_eyes)
 
@@ -89,23 +82,26 @@ def set_pixel_via_image(emo):
     if use_custom_buddy:
         # what emotion
         if emo == "Happy":
-            sense.load_image(custom_buddy_path.join("happy.png"))
+            sense.load_image(custom_buddy_path + "happy.png")
         else:
             if emo == "Hungry":
-                sense.load_image(custom_buddy_path.join("hungery_face.png"))
+                sense.load_image(custom_buddy_path + "hungery_face.png")
             else:
                 if emo == "Cold":
-                    sense.load_image(custom_buddy_path.join("cold.png"))
+                    sense.load_image(custom_buddy_path + "cold.png")
                 else:
                     if emo == "Hot":
-                        sense.load_image(custom_buddy_path.join("hot.png"))
+                        sense.load_image(custom_buddy_path + "hot.png")
                     else:
                         if emo == "blink":
-                            sense.load_image(custom_buddy_path.join("blink.png"))
+                            sense.load_image(custom_buddy_path + "blink.png")
 
 def force_face_load(face):
     sense.set_pixels(face)
                 
+def get_temp():
+    output = CelelisToFahrenheit(sense.get_temperature())
+    return output
 
 # variables!
 
@@ -113,10 +109,7 @@ hungery = 100 # how hungery they get
 
 lives = 3 # how many lives before buddy dies
 
-temp = CelelisToFahrenheit(sense.get_temperature()) # get's init temp
-
-
-print(temp)
+time = 0 # helps counts the secounds of time passed!
 
 atexit.register(exit_Clean_Up)
 
@@ -189,6 +182,89 @@ hungery_face = [
 
 # logic
 
+wakey_wakey(happy_face, blink) # wakes up
+
+def feed():
+    global hungery
+    if hungery <= 100:
+        hungery = hungery + 5
+    
+    if hungery > 100:
+        hungery = 100
+        print("I got too much food!")
+
+sense.stick.direction_any = feed
+
 while True:
-    print("Hello World!")
+
+    # checks if they ran out of lives
+    if lives == 0:
+        sense.clear()
+        sense.show_message("You lost :(")
+        exit()
+    
+    # get's random number for random event
+    random_numberz = random.randint(1,100)
+
+    # get temp
+    temp = get_temp()
+
+    if temp > 110:
+        if show_Hints:
+            print("I am too hot")
+
+        emotion = "Hot"
+    else:
+        if temp < 68:
+            if show_Hints:
+                print("I am too cold!")
+            emotion = "Cold"
+
+    # blinks
+    if random_numberz <= 10:
+        if use_custom_buddy:
+            set_pixel_via_image("Blink")
+            sleep(0.9)
+            set_pixel_via_image(emotion)
+
+    # handles making buddy go hungery
+    if random_numberz > 20:
+        hungery = hungery - 10
+        if show_Hints:
+            print("Just lost some hunger. Now at...")
+            print(hungery)
+
+    # tells the player then they are hungery
+    if hungery < 50:
+        if show_Hints:
+            print("I am hungery now...")
+        
+        emotion = "Hungry"
+
+    if use_custom_buddy:
+        set_pixel_via_image(emotion)
+    else:
+        if emotion == "Happy":
+            sense.set_pixels(happy_face)
+        else:
+            if emotion == "Cold":
+                sense.set_pixels(cold_face)
+            else:
+                if emotion == "Hot":
+                    sense.set_pixels(hot_face)
+                else:
+                    if emotion == "Hungry":
+                        sense.set_pixels(hungery_face)
+
+    if time == 60:
+        if time == 60 and emotion in ["Cold", "Hot", "Hungry"]:
+            lives = lives - 1
+            time = 0
+
+        if hungery <= 0:
+            lives = lives - 1
+            time = 0
+    
+    sleep(1)
+    time = time + 1
 
