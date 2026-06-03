@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "buddy-pal-buddy"
-description = "A tomogachi like game for the raspberry pi and the sense HAT"
+description = "A tamagachi like game for the raspberry pi and the sense HAT"
 
 authors = [
   {name = "Drwhomust", email = "rabbids8008@gmail.com"}
@@ -13,7 +13,7 @@ maintainers = [
   {name = "Drwhomust", email = "rabbids8008@gmail.com"}
 ]
 
-requires-python = ">=3"
+requires-python = ">=3.6"
 
 version = "0.1.0"
 
@@ -39,8 +39,7 @@ classifiers = [
   # Indicate who your project is intended for
   "Intended Audience :: Other Audience",
   "Intended Audience :: Developers",
-"Intended Audience :: Education",
-
+  "Intended Audience :: Education",
   "Topic :: Games/Entertainment :: Simulation"
 
   "Programming Language :: Python :: 3",
