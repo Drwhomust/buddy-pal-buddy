@@ -93,7 +93,7 @@ def set_pixel_via_image(emo):
                     if emo == "Hot":
                         sense.load_image(custom_buddy_path + "hot.png")
                     else:
-                        if emo == "blink":
+                        if emo == "Blink":
                             sense.load_image(custom_buddy_path + "blink.png")
 
 def force_face_load(face):
