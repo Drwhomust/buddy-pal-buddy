@@ -29,6 +29,20 @@ not taking care of buddy
 
 # How to run it?
 
+## trying it out
+
+Not conviced yet?...
+
+It's ok, it's hard to be a sales guy so here is a demo you can play online without any hardware.
+Just a interntet connection and a web browser
+
+You can play it out [here](https://trinket.io/python/c544e0be36c7) however it's limited.
+
+If you want everything follow the next step
+
+> for the cool nerds the source code of the demo is on both the website and here on github
+> inside `demo.py`
+
 ## quick start
 
 If you just want to get into it just run
