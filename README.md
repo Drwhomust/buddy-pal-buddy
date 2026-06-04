@@ -113,3 +113,11 @@ feel free to use the one i made of my OC as a refence
 when making your own
 
 ![](./nightcrawler_buddy.gif)
+
+# Credits
+
+Game by me, Drwhomust
+
+inspired by tamagotchis
+
+OC is based off the nightcrawler from kaiju paradise (peak game)
