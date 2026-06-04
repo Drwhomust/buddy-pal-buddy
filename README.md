@@ -6,6 +6,8 @@ This is a tamagotchi made for the Raspberry Pi and the [sense HAT](https://www.r
 
 It supports many features and works as a great DIY tamagotchi!
 
+![](./demo.gif)
+
 # How to play?
 
 To play you must take care of it (just like a real tamagotchi!)
@@ -91,3 +93,5 @@ sprites to make this work!
 
 feel free to use the one i made of my OC as a refence
 when making your own
+
+![](./nightcrawler_buddy.gif)
