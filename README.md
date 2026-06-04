@@ -53,6 +53,10 @@ If you just want to get into it just run
 
 on your Pi with the sense HAT connected to it and the
 program will take care of the rest
+
+Don't worry about any packages, The version of python the Pi uses
+has everything for the game!
+
 ## don't have a pi or hat?
 
 If you don't have a sense HAT or not even a Pi this
