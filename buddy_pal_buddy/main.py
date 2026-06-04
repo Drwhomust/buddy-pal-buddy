@@ -275,14 +275,13 @@ while True:
             time = 0
             if show_Hints:
                 print("I lost a life dut to being too " + emotion)
-                print("now at " + lives)
 
         if hungery <= 0:
             lives = lives - 1
             time = 0
             if show_Hints:
                 print("I lost a life due to hunger")
-                print("now at " + lives)
+            hungery = 100
     
     sleep(1)
     time = time + 1
