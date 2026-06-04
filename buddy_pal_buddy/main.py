@@ -201,7 +201,7 @@ sense.stick.direction_any = feed
 while True:
 
     # checks if they ran out of lives
-    if lives == 0:
+    if lives <= 0:
         sense.clear()
         sense.show_message("You lost :(")
         exit()
@@ -221,6 +221,7 @@ while True:
         if temp < 68:
             if show_Hints:
                 print("I am too cold!")
+    
             emotion = "Cold"
 
     # blinks
@@ -275,13 +276,9 @@ while True:
             time = 0
             if show_Hints:
                 print("I lost a life dut to being too " + emotion)
+                print("I now have this many lives")
+                print(lives)
 
-        if hungery <= 0:
-            lives = lives - 1
-            time = 0
-            if show_Hints:
-                print("I lost a life due to hunger")
-            hungery = 100
     
     sleep(1)
     time = time + 1
