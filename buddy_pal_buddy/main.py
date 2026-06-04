@@ -85,7 +85,7 @@ def set_pixel_via_image(emo):
             sense.load_image(custom_buddy_path + "happy.png")
         else:
             if emo == "Hungry":
-                sense.load_image(custom_buddy_path + "hungery_face.png")
+                sense.load_image(custom_buddy_path + "hungery.png")
             else:
                 if emo == "Cold":
                     sense.load_image(custom_buddy_path + "cold.png")
