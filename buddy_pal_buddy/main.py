@@ -255,6 +255,14 @@ while True:
         
         emotion = "Happy"
 
+    if hungery <= 0:
+        lives = lives - 1
+        hungery = 100
+        if show_Hints:
+            print("I lost a life due to being too hungery. you are at")
+            print(lives)
+            print("lives")
+
     if use_custom_buddy:
         set_pixel_via_image(emotion)
     else:
@@ -271,7 +279,7 @@ while True:
                         sense.set_pixels(hungery_face)
 
     if time == 60:
-        if time == 60 and emotion in ["Cold", "Hot", "Hungry"]:
+        if time == 60 and emotion in ["Cold", "Hot"]:
             lives = lives - 1
             time = 0
             if show_Hints:
