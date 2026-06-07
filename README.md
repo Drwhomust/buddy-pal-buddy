@@ -20,7 +20,7 @@ They can't be too hot or else they get heat stroke
 but they can't be too cold or else they get frostbite
 (for any nerds buddy can't be hotter than 110 fahrenheit
 or 43.3 celsius and can't be colder than 68 fahrenheit
-or 20. Also yes you can change these values in the
+or 20 celsius. Also yes you can change these values in the
 code)
 
 You get 3 lives and if all three lives are gone buddy dies
